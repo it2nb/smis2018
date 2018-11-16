@@ -1,0 +1,28 @@
+<div class="container centered login-bg">
+    <div class="container centered">
+      <div class="row align-items-center">
+        <div class="mr-auto ml-auto card shadow border border-success px-md-4 px-0 py-2 col-md-4 col-11">
+          <div class="card-body">
+            <form class="ui form" method="post">
+              <div>
+                <h3>ลงชื่อเข้าสู่ระบบ</h3>
+              </div>
+              <div class="field fluid ui left icon input large mt-3">
+                <i class="user icon"></i>
+                <input type="text" name="username" [(ngModel)]="member_name" placeholder="ชื่อผู้ใช้">
+              </div>
+              <div class="field fluid ui left icon input large mt-3">
+                <i class="lock icon"></i>
+                <input type="password" name="password" [(ngModel)]="member_password" placeholder="รหัสผ่าน" required>
+              </div>
+              <div class="alert alert-danger my-2 text-center" role="alert" id="alerterror">
+                  {{ errortxt }}
+                </div>
+              <button type="submit" class="fluid ui primary button mt-3" (click)="memberLogin()">เข้าสู่ระบบ</button>
+            </form>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
