@@ -1,28 +1,29 @@
-<div class="container centered login-bg">
-    <div class="container centered">
-      <div class="row align-items-center">
-        <div class="mr-auto ml-auto card shadow border border-success px-md-4 px-0 py-2 col-md-4 col-11">
-          <div class="card-body">
-            <form class="ui form" method="post">
-              <div>
-                <h3>ลงชื่อเข้าสู่ระบบ</h3>
-              </div>
-              <div class="field fluid ui left icon input large mt-3">
-                <i class="user icon"></i>
-                <input type="text" name="username" [(ngModel)]="member_name" placeholder="ชื่อผู้ใช้">
-              </div>
-              <div class="field fluid ui left icon input large mt-3">
-                <i class="lock icon"></i>
-                <input type="password" name="password" [(ngModel)]="member_password" placeholder="รหัสผ่าน" required>
-              </div>
-              <div class="alert alert-danger my-2 text-center" role="alert" id="alerterror">
-                  {{ errortxt }}
-                </div>
-              <button type="submit" class="fluid ui primary button mt-3" (click)="memberLogin()">เข้าสู่ระบบ</button>
-            </form>
-            
+<div class="container mt-md-5 mt-3 pt-md-5">
+  <div class="row align-items-center">
+    <div class="mr-auto ml-auto card shadow px-md-4 px-0 py-3 col-lg-5 col-md-7 col-11">
+      <div class="card-body">
+        <form class="ui form" method="post">
+          <div class="mb-4">
+            <h3><i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ</h3>
           </div>
-        </div>
+          <div class="input-group mt-4">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><i class="fas fa-user"></i></div>
+            </div>
+            <input type="text" name="username" [(ngModel)]="member_name" placeholder="Username" class="form-control"
+              required>
+          </div>
+          <div class="input-group mt-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><i class="fas fa-key"></i></div>
+            </div>
+            <input type="password" name="password" [(ngModel)]="member_password" placeholder="Password" class="form-control"
+              required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block mt-4" (click)="memberLogin()">ลงชื่อเข้าสู่ระบบ</button>
+        </form>
+
       </div>
     </div>
   </div>
+</div>

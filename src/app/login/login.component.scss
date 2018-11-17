@@ -1,22 +1,37 @@
-.centered {
-    position: fixed;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
-  }
+@import '../../styles';
 
-  .login-bg{
-      position: fixed;
-      height: 200%;
-      /* background-color: lightgray; */
-      /* box-shadow: 0px 0px 10px 1px; */
-  }
+// .centered {
+// //   position: fixed;
+// //   top: 43%;
+// //   left: 50%;
+// //   /* bring your own prefixes */
+// //   transform: translate(-50%, -50%);
+//     margin-top: 100px
+// }
 
-  h3{
-    font-family: 'Prompt', 'Niramit', 'Roboto', sans-serif;
-  }
+.login-bg {
+  position: fixed;
+  height: 200%;
+  /* background-color: lightgray; */
+  /* box-shadow: 0px 0px 10px 1px; */
+}
 
-  .errorModuleBg{
-      background-color: lightpink;
-  }
+h3 {
+  font-family: 'Prompt', 'Niramit', 'Roboto', sans-serif;
+  color: $sicc-blue;
+  padding-bottom: 3px;
+  border-bottom: solid 3px $sicc-blue-darken1;
+}
+.input-group-text {
+    color: white;
+    background-color: $sicc-blue-lighten1;
+}
+
+input[type=text], input[type=password] {
+  padding: 20px 10px;
+}
+
+button {
+    background-color: $sicc-blue;
+    border-color: $sicc-blue
+}
