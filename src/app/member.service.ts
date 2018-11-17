@@ -1,13 +1,20 @@
 import {Injectable} from '@angular/core';
 import http from 'axios';
 import {appConfig} from './app-cfg';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    'Authorization': 'my-auth-token'
+  })
+};
 @Injectable({
   providedIn: 'root'
 })
 export class MemberService {
   appconfig = appConfig;
-  constructor() {
+  constructor(private http: HttpClient) {
 
   }
 

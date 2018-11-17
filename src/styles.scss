@@ -1,13 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Niramit|Prompt|Roboto');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-
-$sicc-orange: #F89C27;
-$sicc-blue: #0054A6;
-$sicc-blue-lighten1: rgb(5, 98, 190);
-$sicc-blue-lighten2: rgb(183, 211, 240);
-$sicc-blue-darken1: rgb(3, 71, 139);
-$sicc-blue-darken2: rgb(2, 45, 87);
+@import 'variables';
 
 html,
 body {
@@ -24,4 +18,10 @@ body {
   margin: 0;
   background-color: whitesmoke;
   font-family: 'Prompt', 'Niramit', 'Roboto', sans-serif;
+}
+.ng-valid[required], .ng-valid.required  {
+  border-right: 3px solid #42A948; /* green */
+}
+.ng-invalid:not(form)  {
+  border-right: 3px solid #a94442; /* red */
 }

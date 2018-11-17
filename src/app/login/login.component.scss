@@ -1,4 +1,4 @@
-@import '../../styles';
+@import '../../variables';
 
 // .centered {
 // //   position: fixed;
@@ -8,19 +8,24 @@
 // //   transform: translate(-50%, -50%);
 //     margin-top: 100px
 // }
+.card{
+  background-color: transparent;
+}
 
 .login-bg {
   position: fixed;
-  height: 200%;
-  /* background-color: lightgray; */
+  height: 100%;
+  width: 100%;
+  background-color: $sicc-blue-darken1;
+  z-index: -1;
   /* box-shadow: 0px 0px 10px 1px; */
 }
 
 h3 {
   font-family: 'Prompt', 'Niramit', 'Roboto', sans-serif;
-  color: $sicc-blue;
-  padding-bottom: 3px;
-  border-bottom: solid 3px $sicc-blue-darken1;
+  color: white;
+  padding-bottom: 10px;
+  border-bottom: solid 3px $sicc-orange;
 }
 .input-group-text {
     color: white;
@@ -32,6 +37,7 @@ input[type=text], input[type=password] {
 }
 
 button {
-    background-color: $sicc-blue;
-    border-color: $sicc-blue
+    background-color: $sicc-blue-darken1;
+    border-color: white;
+    // border-width: 2px;
 }

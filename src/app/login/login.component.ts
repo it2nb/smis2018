@@ -17,54 +17,26 @@ export class LoginComponent implements OnInit {
   member_password = '';
   appconfig = appConfig;
   errortxt = '';
+  heroForm: any;
   // router: Router;
   
   constructor(private memberService: MemberService, private router: Router) { }
-
+  
   async ngOnInit() {
     sessionStorage.clear();
-    $('.ui.form')
-    .form({
-      fields: {
-        username: {
-          identifier: 'username',
-          rules: [
-            {
-              type   : 'empty'
-            }
-          ]
-        },
-        password: {
-          identifier: 'password',
-          rules: [
-            {
-              type   : 'empty'
-            }
-          ]
-        }
-      }
-    }).submit(function(event){
-      event.preventDefault();
-    });
-
-    $('#alerterror').hide();
   }
-  async memberLogin(){
-    if(this.member_name != '' && this.member_password != ''){
-      this.member = await this.memberService.getMembers('memberLogin', this.member_name, this.member_password);
+
+  async onSubmit(loginForm) {
+    if(loginForm.valid){
+      this.member = await this.memberService.getMembers('memberLogin', loginForm.value.username, loginForm.value.password);
       if(this.member != false){
         $('#alerterror').hide();
         sessionStorage.setItem("loginMember",JSON.stringify(this.member));
         this.router.navigate(['/system']);
       } else {
-        this.errortxt = 'ชื่อผู้ใช้ หรือ รหัสผ่าน ไม่ถูกต้อง';
+        this.errortxt = 'Username หรือ Password ไม่ถูกต้อง';
         $('#alerterror').show();
       }
-
-    } else {
-      this.errortxt = 'กรุณากรอก ชื่อผู้ใช้ และ รหัสผ่าน';
-      $('#alerterror').show();
     }
   }
-
 }

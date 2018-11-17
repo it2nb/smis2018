@@ -1,8 +1,11 @@
+<div class="login-bg">
+</div>
+<div class="container py-3"><img src="../../assets/smis.png" height="50"></div>
 <div class="container mt-md-5 mt-3 pt-md-5">
   <div class="row align-items-center">
-    <div class="mr-auto ml-auto card shadow px-md-4 px-0 py-3 col-lg-5 col-md-7 col-11">
+    <div class="mr-auto ml-auto card border-0 px-md-4 px-0 py-3 col-lg-5 col-md-7 col-11">
       <div class="card-body">
-        <form class="ui form" method="post">
+        <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
           <div class="mb-4">
             <h3><i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ</h3>
           </div>
@@ -10,17 +13,32 @@
             <div class="input-group-prepend">
               <div class="input-group-text"><i class="fas fa-user"></i></div>
             </div>
-            <input type="text" name="username" [(ngModel)]="member_name" placeholder="Username" class="form-control"
-              required>
+            <input type="text" name="username" id="username" [(ngModel)]="member_name" placeholder="Username" class="form-control"
+              required #username="ngModel">
           </div>
+          <alert type="danger" *ngIf="username.invalid && (username.dirty || username.touched || loginForm.submitted)">
+            <div *ngIf="username.errors.required">
+              กรุณากรอก Username
+            </div>
+          </alert>
           <div class="input-group mt-3">
             <div class="input-group-prepend">
               <div class="input-group-text"><i class="fas fa-key"></i></div>
             </div>
             <input type="password" name="password" [(ngModel)]="member_password" placeholder="Password" class="form-control"
-              required>
+              required #password="ngModel">
           </div>
-          <button type="submit" class="btn btn-primary btn-lg btn-block mt-4" (click)="memberLogin()">ลงชื่อเข้าสู่ระบบ</button>
+          <alert type="danger" *ngIf="password.invalid && (password.dirty || password.touched || loginForm.submitted)">
+            <div *ngIf="password.errors.required">
+              กรุณากรอก Password
+            </div>
+          </alert>
+          <div *ngIf="errortxt" class="mt-1">
+          <alert type="danger">
+              {{ errortxt }}
+          </alert>
+        </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">ลงชื่อเข้าสู่ระบบ</button>
         </form>
 
       </div>
