@@ -4,3 +4,22 @@
     background-color: $sicc-blue-darken1;
     /* box-shadow: 2px 2px var(--sicc-orange); */
 }
+
+.navbar-nav li > a {
+	// text-transform: capitalize;
+	// color: #333;
+	transition: background-color .2s, color .2s;
+	
+	&:hover,
+	&:focus {
+        border-bottom: solid 2px $sicc-orange-darken1;
+        background-image: linear-gradient($sicc-blue-darken1, $sicc-orange);
+		color: #fff;
+	}
+}
+
+.navbar-nav li.active > a {
+    border-bottom: solid 2px $sicc-orange-darken1;
+    background-image: linear-gradient($sicc-blue-darken1, $sicc-orange);
+	color: #fff;
+}

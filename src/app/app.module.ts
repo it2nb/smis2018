@@ -8,12 +8,16 @@ import { NgxBootstrapModule } from './ngx-bootstrap';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
+import { SystemComponent } from './system/system.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HeaderComponent
+    HeaderComponent,
+    SystemComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
