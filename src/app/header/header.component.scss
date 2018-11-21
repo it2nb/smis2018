@@ -13,10 +13,23 @@
 	&:focus {
         border-bottom: solid 2px $sicc-orange-darken1;
 		color: #fff;
+		cursor: pointer;
 	}
 }
 
 .navbar-nav li.active > a {
     border-bottom: solid 2px $sicc-orange-darken1;
 	color: #fff;
+}
+
+.dropdown-menu li > a {
+	// text-transform: capitalize;
+	// color: #333;
+	transition: background-color .2s, color .2s;
+	&:hover,
+	&:focus {
+        border-bottom: solid 2px $sicc-orange-darken1;
+		color: #fff;
+		cursor: pointer;
+	}
 }
