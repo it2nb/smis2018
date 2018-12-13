@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { SystemComponent } from './system/system.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+// import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+// import {APP_BASE_HREF} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  // providers: [{provide: APP_BASE_HREF, useValue: './'}],
+  // providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

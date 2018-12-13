@@ -7,38 +7,30 @@
       <div class="card-body">
         <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
           <div class="mb-4">
-            <h3><i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ</h3>
+            <h3><i class="fas fa-sign-in-alt"></i> Sign In</h3>
           </div>
           <div class="input-group mt-4">
             <div class="input-group-prepend">
               <div class="input-group-text"><i class="fas fa-user"></i></div>
             </div>
             <input type="text" name="username" id="username" [(ngModel)]="member_name" placeholder="Username" class="form-control"
-              required #username="ngModel">
+              required #username="ngModel" [ngClass]="{'is-invalid':username.invalid && (username.dirty || username.touched || loginForm.submitted)}">
+              <div class="invalid-feedback">Please fill Username.</div>
           </div>
-          <alert type="danger" *ngIf="username.invalid && (username.dirty || username.touched || loginForm.submitted)">
-            <div *ngIf="username.errors.required">
-              กรุณากรอก Username
-            </div>
-          </alert>
           <div class="input-group mt-3">
             <div class="input-group-prepend">
               <div class="input-group-text"><i class="fas fa-key"></i></div>
             </div>
             <input type="password" name="password" [(ngModel)]="member_password" placeholder="Password" class="form-control"
-              required #password="ngModel">
+              required #password="ngModel" [ngClass]="{'is-invalid':password.invalid && (password.dirty || password.touched || loginForm.submitted)}">
+              <div class="invalid-feedback">Please fill Password.</div>
           </div>
-          <alert type="danger" *ngIf="password.invalid && (password.dirty || password.touched || loginForm.submitted)">
-            <div *ngIf="password.errors.required">
-              กรุณากรอก Password
-            </div>
-          </alert>
           <div *ngIf="errortxt" class="mt-1">
-          <alert type="danger">
+          <alert type="danger text-center">
               {{ errortxt }}
           </alert>
         </div>
-          <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">ลงชื่อเข้าสู่ระบบ</button>
+          <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Sign In</button>
         </form>
 
       </div>

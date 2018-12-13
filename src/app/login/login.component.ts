@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { MemberService } from '../member.service';
 import { appConfig } from '../app-cfg';
 import { Router } from '@angular/router';
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   // router: Router;
   
   constructor(private memberService: MemberService, private router: Router) { }
-  
+
   async ngOnInit() {
     sessionStorage.clear();
   }
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem("loginMember",JSON.stringify(this.member));
         this.router.navigate(['/system']);
       } else {
-        this.errortxt = 'Username หรือ Password ไม่ถูกต้อง';
+        this.errortxt = 'Invalid Username or Password.';
         $('#alerterror').show();
       }
     }
